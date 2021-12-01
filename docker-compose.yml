@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+
+  testecert: 
+    container_name: testecert
+    image: williammian/testecert:v1-dev
+    ports:
+      - 80:80
+      - 443:443

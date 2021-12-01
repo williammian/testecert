@@ -1,0 +1,48 @@
+os arquivos do projeto devem ficar na pasta
+/usr/share/nginx/html
+
+
+nginx.conf
+fica na pasta /etc/nginx
+e não é alterado, manter o padrão
+ele aponta para as configurações de server que estão na pasta
+/etc/nginx/conf.d
+
+
+dentro da pasta conf.d
+há o arquivo default.conf
+não alterá-lo
+
+
+colocar dentro da pasta conf.d
+o arquivo serverssl.conf
+
+
+na pasta certs colocar os arquivos .crt e .key
+
+
+-------------------------------------------------
+
+https://programadoresbrasil.com.br/2020/11/tutorial-como-configurar-o-ssl-em-seu-ambiente-de-desenvolvimento-com-docker-openssl-e-nginx/?amp
+
+Criar um certificado SSL com OpenSSL
+
+Verifique se o pacote OpenSSL já está instalado no sistema. No terminal, execute o comando:
+$ which openssl
+# /usr/bin/openssl
+
+Navegue para o diretório no qual você irá armazenar o certificado:
+$ cd ~/ssl
+
+Com o comando abaixo você irá gerar o certificado:
+$ openssl req -x509 -nodes -newkey rsa:2048 -keyout cert.key -out cert.crt -days 365
+
+As informações do questionário será associado ao certificado, mas não precisa ser preenchido com informações verídicas:
+
+Country Name (2 letter code) [AU]:BR
+State or Province Name (full name) [Some-State]:Sao Paulo
+Locality Name (eg, city) [ ]:Sao Paulo
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: Empresa
+Organizational Unit Name (eg, section) [ ]: Tecnologia
+Common Name (e.g. server FQDN or YOUR name) [ ] :Pedro Lopes
+Email Address [ ]:pedro.lopes@empresa.co
